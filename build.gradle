@@ -1,0 +1,25 @@
+plugins {
+    id "java"
+    id "edu.sc.seis.launch4j" version "3.0.5"
+}
+
+jar {
+    manifest{
+        attributes "Main-Class": "Application"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "net.sf.launch4j:launch4j:3.50"
+}
+
+launch4j {
+    outfile = "Music Rating.exe"
+    mainClassName = "src.main.java.Application"
+    icon = "${projectDir}/icons/myApp.ico"
+    headerType = "console"
+}
